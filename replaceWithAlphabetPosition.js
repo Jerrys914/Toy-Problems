@@ -26,7 +26,7 @@ function alphabetPosition(text) {
     x:24,
     y:25,
     z:26
-  }
+  } 
   text = text.toLowerCase();
   let result = '';
   

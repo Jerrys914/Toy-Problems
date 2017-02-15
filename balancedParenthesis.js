@@ -1,3 +1,7 @@
+/*
+Given a string, return true if it contains balanced parenthesis
+ */
+
 function isBalanced(string) {
   let count = 0;
   

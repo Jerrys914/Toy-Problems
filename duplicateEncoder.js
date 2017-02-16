@@ -10,7 +10,7 @@ Examples:
 "recede" => "()()()"
 
 "Success" => ")())())"
-*/
+*/  
 
 function duplicateEncode(word){
   word = word.toUpperCase();

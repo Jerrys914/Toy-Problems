@@ -9,8 +9,7 @@
   - add the number of water to waterblocks or 0 if it is negative
   - return the reduce;
 */
-var waterBlocks = function (blocks) {
-  return blocks.reduce((waterBlocks, currentBlock, index, blocks) => {
+const waterBlocks = (blocks) => blocks.reduce((waterBlocks, currentBlock, index, blocks) => {
     let heightToLeft = Math.max.apply(null,blocks.slice(0,index));
     let heightToRight = Math.max.apply(null,blocks.slice(index));
     let water = Math.min(heightToLeft,heightToRight) - currentBlock;

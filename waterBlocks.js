@@ -14,5 +14,4 @@ const waterBlocks = (blocks) => blocks.reduce((waterBlocks, currentBlock, index,
     let heightToRight = Math.max.apply(null,blocks.slice(index));
     let water = Math.min(heightToLeft,heightToRight) - currentBlock;
     return waterBlocks + Math.max(water,0);
-  },0)
-};
+  },0);

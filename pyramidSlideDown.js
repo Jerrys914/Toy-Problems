@@ -2,21 +2,24 @@
   Pyramids are amazing! Both in architectural and mathematical sense. 
   If you have a computer, you can mess with pyramids even if you are not in Egypt at the time. 
   For example, let's consider the following problem. 
-  Imagine that you have a plane pyramid built of numbers, l
-  ike this one here:  /3/ \7\ 4     2 \4\ 6    8 5 \9\ 3
+  Imagine that you have a plane pyramid built of numbers, 
+  like this one here: /3/ 
+                     \7\ 4     
+                    2 \4\ 6    
+                   8 5 \9\ 3
   
   Here comes the task...
 
   Let's say that the 'slide down' is a sum of consecutive numbers from the top to the bottom of the pyramid. As you can see, the longest 'slide down' is 3 + 7 + 4 + 9 = 23
 
-  Your task is to write a function longestSlideDown (in ruby: longest_slide_down) that takes a pyramid representation as argument and returns its' longest 'slide down'. For example,
+  Your task is to write a function longestSlideDown (in ruby: longest_slide_down) that takes a pyramid representation as argument and returns its' longest 'slide down'. 
+  For example,
 
-  longestSlideDown [[3],
+  longestSlideDown [
+  [3],
   [7, 4],
   [2, 4, 6],
-  [8, 5, 9, 3]],
-
-  -- => 23
+  [8, 5, 9, 3]],-- => 23
 */
 
 const longestSlideDown = pyramid => {
@@ -27,8 +30,23 @@ console.log(pyramid)
    && pyramid[x][y]){ return true } return false;
   }
   let temp = 0;
-  let recurse = (p, x, y) => { if(x >= p.length-1){   temp+= p[x][y];   if(temp > total){ total=temp   }   temp-=p[x][y],
-     return } temp+= p[x][y]; if(isInBounds(x+1,y)){   recurse(p,x+1,y) } if(isInBounds(x+1,y+1)){   recurse(p,x+1,y+1) } temp-=p[x][y]
+  let recurse = (p, x, y) => { 
+    if(x >= p.length-1){   
+      temp+= p[x][y];   
+      if(temp > total){ 
+        total=temp   
+      }   
+      temp-=p[x][y],
+      return 
+    } 
+   temp+= p[x][y]; 
+   if(isInBounds(x+1,y)){   
+    recurse(p,x+1,y) 
+    } 
+    if(isInBounds(x+1,y+1)){   
+      recurse(p,x+1,y+1) 
+    } 
+    temp-=p[x][y]
   }
   recurse(pyramid,0,0)
   return total

@@ -24,7 +24,7 @@ function isTreeSymmetric(t) {
         if(left.left && right.right){
             recurse(left.left, right.right)
         } else {
-            if(left.left === null && right.right===null){
+            if(left.left === null && right.right===null && result){
                 result = true;
             } else {
                 result = false;
@@ -33,7 +33,7 @@ function isTreeSymmetric(t) {
         if(left.right && right.left){
             recurse(left.right, right.left)
         } else {
-            if(left.right === null && right.left===null){
+            if(left.right === null && right.left===null && result){
                 result = true;
             } else {
                 result = false;
